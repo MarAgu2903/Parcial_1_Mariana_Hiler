@@ -1,17 +1,19 @@
-package org.example.Pacientes;
+package org.example.Model.Pacientes;
 
-import org.example.Pacientes.Interface.CicloMutacion;
+import org.example.Model.Pacientes.Interface.CicloMutacion;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public abstract class Paciente implements CicloMutacion {
 
-    private String Id;
-    private int nivelInfeccion;
-    private int nivelSalud;
-    private String genoma;
+    protected String Id;
+    protected int nivelInfeccion;
+    protected int nivelSalud;
+    protected String genoma;
 
-    public Paciente (String Id, int nivelInfeccion, int nivelSalud, String genoma, String tipoPaciente){
+    public Paciente (String Id, int nivelInfeccion, int nivelSalud, String genoma){
         try {
 
             if (Id == null || Id.isEmpty()) {
@@ -40,6 +42,53 @@ public abstract class Paciente implements CicloMutacion {
 
     }
 
+    // Metodo para validar la cantidad de dosis que necesita por tipo de genoma
+    public Map<String, Integer> generarReceta() {
+
+        Map<String, Integer> receta = new HashMap<>();
+
+        int i = 0;
+
+        while (i < genoma.length()) {
+
+            char tipo = genoma.charAt(i); // A, B o O
+            i++;
+
+            String numero = "";
+
+            // Construir el número completo (puede ser más de un dígito)
+            while (i < genoma.length() && Character.isDigit(genoma.charAt(i))) {
+                numero += genoma.charAt(i);
+                i++;
+               // System.out.println(numero + genoma.charAt(i));
+
+            }
+
+            int cantidad = Integer.parseInt(numero);
+
+            receta.put(String.valueOf(tipo), cantidad);
+        }
+
+        return receta;
+    }
+
+
+    //Metodo para saber la cantidad total de la dosis (para comparar quien gasta menos dosis entre fila vs UCI)
+    public int getTotalReceta() {
+
+        Map<String, Integer> receta = generarReceta();
+
+        int total = 0;
+
+        for (Integer cantidad : receta.values()) {
+            total += cantidad;
+        }
+
+        return total;
+    }
+
+
+
     public String getId() {
         return Id;
     }
@@ -53,8 +102,29 @@ public abstract class Paciente implements CicloMutacion {
         return genoma;
     }
 
-    //metodo abstracto privado Ci
-    //private abstract cicloMutacion int
+
+    public abstract int getPrioridad();
+
+    @Override
+    public abstract void degradacionInfeccion();
+
+    @Override
+    public abstract void degradacionSalud();
+
+    public void aplicarDegradacion() {
+
+        degradacionInfeccion();
+        degradacionSalud();
+
+        if (this.nivelSalud < 0)
+            this.nivelSalud = 0;
+    }
+
+    public boolean estaMuerto() {
+        return this.nivelSalud <= 0;
+    }
+
+
 
 
     @Override
