@@ -1,44 +1,77 @@
 package org.example;
 
 import org.example.Model.Almacen.Almacen;
-import org.example.Model.Pacientes.Civil;
-import org.example.Model.Pacientes.Medico;
-import org.example.Model.Pacientes.Militar;
-import org.example.Model.Pacientes.Paciente;
+import org.example.Model.Pacientes.*;
 import org.example.Model.Sistema.Priorizacion;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
 
-    public static void main(String[] args) {
+        // Ruta global del archivo
+        private static final String RUTA_ARCHIVO = "src/main/resources/Simulacion_datosPaciente.txt";
 
-    // 1️⃣ Crear colas
-    Queue<Paciente> cola = new LinkedList<>();
-    Queue<Paciente> uci = new LinkedList<>();
+        public static void main(String[] args) {
 
-    // 2️⃣ Crear almacén
-    Almacen almacen = new Almacen(2, 2, 2);
+            Queue<Paciente> colaGeneral = new LinkedList<>();
+            Queue<Paciente> colaUCI = new LinkedList<>();
 
-    // 3️⃣ Crear sistema de priorización
-    Priorizacion sistema = new Priorizacion(cola, uci, almacen);
+            // Inicializa el almacén con valores para el ejemplo
+            Almacen almacen = new Almacen(112, 112, 112);
 
-    // 4️⃣ Crear pacientes manualmente
-    Paciente p1 = new Militar("1", 20, 80, "A3B1O1");
-    Paciente p2 = new Civil("2", 30, 60, "A5B6O1");
-    Paciente p3 = new Medico("3", 15, 90, "A2B1O8");
+            cargarPacientesDesdeArchivo(colaGeneral);
 
-    // 5️⃣ Agregarlos a la cola
-        sistema.agregarPaciente(p1);
-        sistema.agregarPaciente(p2);
-        sistema.agregarPaciente(p3);
+            Priorizacion sistema = new Priorizacion(colaGeneral, colaUCI, almacen);
 
-    // 6️⃣ Ejecutar algunos turnos (NO infinito)
-        sistema.iniciarSimulacion();
+            sistema.iniciarSimulacion();
+        }
 
-    }
+        private static void cargarPacientesDesdeArchivo(Queue<Paciente> cola) {
 
+            try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO))) {
+
+                String linea;
+
+                while ((linea = br.readLine()) != null) {
+
+                    String[] datos = linea.split("/");
+
+                    String id = datos[0];
+                    String nombre = datos[1];
+                    String tipo = datos[2];
+                    int nivelInfeccion = Integer.parseInt(datos[3]);
+                    int nivelSalud = Integer.parseInt(datos[4]);
+                    String genoma = datos[5];
+
+                    Paciente paciente = null;
+
+                    switch (tipo) {
+                        case "CIVIL":
+                            paciente = new Civil(id, nombre, nivelInfeccion, nivelSalud, genoma);
+                            break;
+                        case "MILITAR":
+                            paciente = new Militar(id, nombre, nivelInfeccion, nivelSalud, genoma);
+                            break;
+                        case "DOCTOR":
+                            paciente = new Medico(id, nombre, nivelInfeccion, nivelSalud, genoma);
+                            break;
+                        default:
+                            System.out.println("Tipo desconocido: " + tipo);
+                    }
+
+                    if (paciente != null) {
+                        cola.offer(paciente);
+                    }
+                }
+
+            } catch (IOException e) {
+                System.out.println("Error leyendo archivo: " + e.getMessage());
+            }
+        }
 }
+

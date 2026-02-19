@@ -51,26 +51,38 @@ public abstract class Paciente implements CicloMutacion {
 
         while (i < genoma.length()) {
 
-            char tipo = genoma.charAt(i); // A, B o O
-            i++;
+            char tipo = genoma.charAt(i);
 
-            String numero = "";
-
-            // Construir el número completo (puede ser más de un dígito)
-            while (i < genoma.length() && Character.isDigit(genoma.charAt(i))) {
-                numero += genoma.charAt(i);
-                i++;
-               // System.out.println(numero + genoma.charAt(i));
-
+            // Validar que sea A, B u O
+            if (tipo != 'A' && tipo != 'B' && tipo != 'O') {
+                throw new IllegalArgumentException("Genoma inválido: " + genoma);
             }
 
-            int cantidad = Integer.parseInt(numero);
+            i++;
 
-            receta.put(String.valueOf(tipo), cantidad);
+            StringBuilder numero = new StringBuilder();
+
+            while (i < genoma.length() && Character.isDigit(genoma.charAt(i))) {
+                numero.append(genoma.charAt(i));
+                i++;
+            }
+
+            if (numero.length() == 0) {
+                throw new IllegalArgumentException("Cantidad faltante en genoma: " + genoma);
+            }
+
+            int cantidad = Integer.parseInt(numero.toString());
+
+            // Si ya existe el tipo, suma (más robusto)
+            receta.put(
+                    String.valueOf(tipo),
+                    receta.getOrDefault(String.valueOf(tipo), 0) + cantidad
+            );
         }
 
         return receta;
     }
+
 
 
     //Metodo para saber la cantidad total de la dosis (para comparar quien gasta menos dosis entre fila vs UCI)

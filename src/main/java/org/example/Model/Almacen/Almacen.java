@@ -29,7 +29,7 @@ public class Almacen {
         }
     }
 
-    //Es una validación inicial para comprobar que existen recursos suficientes
+    //validacion criterios de recursos suficientes
     public boolean puedeSanar(Map<String, Integer> dosisgenoma) {
 
         if (dosisgenoma == null) {
@@ -41,7 +41,7 @@ public class Almacen {
                 && tipoO >= dosisgenoma.getOrDefault("O", 0);
     }
 
-    // Luego de validar que hay recursos suficientes, se procede a sanar al Paciente
+    // validar que hay recursos suficientes
     public void consumirRecursos(Map<String, Integer> dosisgenoma) {
 
         try {

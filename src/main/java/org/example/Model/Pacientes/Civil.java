@@ -2,7 +2,7 @@ package org.example.Model.Pacientes;
 
 public class Civil extends Paciente{
 
-        public Civil(String Id, int nivelInfeccion, int nivelSalud, String genoma) {
+        public Civil(String Id, String Nombre, int nivelInfeccion, int nivelSalud, String genoma) {
         super(Id, nivelInfeccion, nivelSalud, genoma);
     }
 

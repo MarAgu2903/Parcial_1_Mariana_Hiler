@@ -2,7 +2,7 @@ package org.example.Model.Pacientes;
 
 public class Militar extends Paciente{
 
-    public Militar(String Id, int nivelInfeccion, int nivelSalud, String genoma) {
+    public Militar(String Id, String Nombre, int nivelInfeccion, int nivelSalud, String genoma) {
         super(Id, nivelInfeccion, nivelSalud, genoma);
     }
 
