@@ -7,7 +7,12 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Priorizacion {
+
+    private static final Logger logger = LogManager.getLogger(Priorizacion.class.getName());
 
         private Queue<Paciente> colaPacientes;
         private Queue<Paciente> colaUCI;
@@ -28,7 +33,17 @@ public class Priorizacion {
 
         public void iniciarSimulacion() {
 
+            int turno = 1;
+
             while (!colaPacientes.isEmpty() || !colaUCI.isEmpty()) {
+
+                logger.info("Inicio Turno {}", turno);
+                logger.info("Pacientes en fila: {}", colaPacientes.size());
+                logger.info("Pacientes en UCI: {}", colaUCI.size());
+                logger.info("Recursos disponibles -> A:{} B:{} O:{}",
+                        almacen.getTipoA(),
+                        almacen.getTipoB(),
+                        almacen.getTipoO());
 
                 Paciente pacienteFila = colaPacientes.peek();
                 Paciente pacienteUCI = colaUCI.peek();
@@ -93,11 +108,14 @@ public class Priorizacion {
                 else {
                     if (pacienteFila != null) {
                         colaUCI.offer(colaPacientes.poll());
-                        System.out.println("Paciente pasa a UCI");
+                        //System.out.println("Paciente pasa a UCI");
+                        logger.warn("Paciente {} pasa a UCI", pacienteFila.getId());
                     }
                     degradarAumentar();
                     registrarMuertes(colaPacientes);
                     registrarMuertes(colaUCI);
+                    logger.info("Fin Turno {} ", turno);
+                    turno++;
                     continue;
                 }
 
@@ -106,20 +124,42 @@ public class Priorizacion {
 
                     Map<String, Integer> receta = seleccionado.generarReceta();
                     almacen.consumirRecursos(receta);
+                    logger.info("Paciente {} fue sanado. Cantidad recursos utilizados: {}",
+                            seleccionado.getId(),
+                            receta);
+
                 }
 
                 degradarAumentar();
                 registrarMuertes(colaPacientes);
                 registrarMuertes(colaUCI);
+
+                logger.info("Fin Turno {} ", turno);
+                turno++;
             }
 
-            System.out.println("No hay más pacientes. Fin de la simulación.");
+            //System.out.println("No hay más pacientes. Fin de la simulación.");
+            logger.info("No hay más pacientes. Fin de la simulación.");
+            logger.info("Estado final recursos en Almacen -> A:{} B:{} O:{}",
+                    almacen.getTipoA(),
+                    almacen.getTipoB(),
+                    almacen.getTipoO());
         }
 
+
         private void degradarAumentar() {
+            logger.info("Cantidad recursos restantes -> A:{} B:{} O:{}",
+                    almacen.getTipoA(),
+                    almacen.getTipoB(),
+                    almacen.getTipoO());
+            logger.debug("Aplicando degradación de salud y aumento de infección");
             degradarPacientes(colaPacientes);
             degradarPacientes(colaUCI);
             almacen.aumentarRecursos();
+            logger.info("Recursos luego de aumento -> A:{} B:{} O:{}",
+                    almacen.getTipoA(),
+                    almacen.getTipoB(),
+                    almacen.getTipoO());
         }
 
         private void degradarPacientes(Queue<Paciente> cola) {
@@ -145,7 +185,8 @@ public class Priorizacion {
                 Paciente paciente = cola.poll();
 
                 if (paciente.estaMuerto()) {
-                    System.out.println("Paciente falleció: " + paciente.getId());
+                    //System.out.println("Paciente falleció: " + paciente.getId());
+                    logger.error("Paciente {} ha fallecido en el turno actual", paciente.getId());
                 } else {
                     cola.offer(paciente);
                 }

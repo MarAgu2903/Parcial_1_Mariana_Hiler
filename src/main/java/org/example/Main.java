@@ -22,7 +22,7 @@ public class Main {
             Queue<Paciente> colaUCI = new LinkedList<>();
 
             // Inicializa el almacén con valores para el ejemplo
-            Almacen almacen = new Almacen(112, 112, 112);
+            Almacen almacen = new Almacen(1, 1, 1);
 
             cargarPacientesDesdeArchivo(colaGeneral);
 

@@ -69,9 +69,9 @@ public class Almacen {
 
             Random r = new Random();
 
-            tipoA += r.nextInt(4); // 0 a 3
-            tipoB += r.nextInt(3); // 0 a 2
-            tipoO += r.nextInt(2); // 0 a 1
+            tipoA += r.nextInt(2) + 1;
+            tipoB += r.nextInt(2) + 1;
+            tipoO += r.nextInt(2) + 1;
 
             if (tipoA < 0 || tipoB < 0 || tipoO < 0) {
                 throw new IllegalStateException("Error en incremento de recursos");

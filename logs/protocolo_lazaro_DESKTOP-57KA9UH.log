@@ -1,0 +1,134 @@
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 1
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 58
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:1 B:1 O:1
+2026-02-20 00:55:02 [main] WARN  org.example.Model.Sistema.Priorizacion - Paciente 001 pasa a UCI
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:1 O:1
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:3 B:3 O:2
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 018 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 030 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 048 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 054 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 1 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 2
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 53
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 1
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:3 B:3 O:2
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Paciente 002 fue sanado. Cantidad recursos utilizados: {A=3, B=2, O=2}
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:0 B:1 O:0
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:2 B:2 O:1
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 006 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 010 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 012 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 024 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 036 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 042 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 2 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 3
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 46
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 1
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:2 B:2 O:1
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Paciente 003 fue sanado. Cantidad recursos utilizados: {A=1, B=1, O=0}
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:1 O:1
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:3 B:3 O:2
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 004 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 009 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 014 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 015 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 021 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 022 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 026 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 027 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 028 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 033 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 034 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 038 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 039 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 040 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 044 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 045 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 046 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 051 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 052 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 057 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 058 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 3 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 4
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 24
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 1
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:3 B:3 O:2
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Paciente 005 fue sanado. Cantidad recursos utilizados: {A=2, B=2, O=1}
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:1 O:1
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:2 B:3 O:3
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 016 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 4 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 5
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 22
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 1
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:2 B:3 O:3
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Paciente 007 fue sanado. Cantidad recursos utilizados: {A=1, B=0, O=0}
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:3 O:3
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:2 B:4 O:5
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 008 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 020 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 025 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 037 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 043 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 056 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 001 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 5 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 6
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 15
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:2 B:4 O:5
+2026-02-20 00:55:02 [main] WARN  org.example.Model.Sistema.Priorizacion - Paciente 011 pasa a UCI
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:2 B:4 O:5
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:4 B:5 O:6
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 013 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 019 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 031 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 032 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 049 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 050 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 055 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 6 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 7
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 7
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 1
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:4 B:5 O:6
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Paciente 017 fue sanado. Cantidad recursos utilizados: {A=2, B=2, O=1}
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:2 B:3 O:5
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:3 B:4 O:7
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 029 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 011 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 7 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 8
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 5
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:3 B:4 O:7
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Paciente 023 fue sanado. Cantidad recursos utilizados: {A=1, B=1, O=0}
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:2 B:3 O:7
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:3 B:5 O:8
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 047 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 053 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 8 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 9
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 2
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:3 B:5 O:8
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Paciente 035 fue sanado. Cantidad recursos utilizados: {A=2, B=1, O=0}
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:4 O:8
+2026-02-20 00:55:02 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:3 B:5 O:9
+2026-02-20 00:55:02 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 041 ha fallecido en el turno actual
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 9 
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - No hay más pacientes. Fin de la simulación.
+2026-02-20 00:55:02 [main] INFO  org.example.Model.Sistema.Priorizacion - Estado final recursos en Almacen -> A:3 B:5 O:9
