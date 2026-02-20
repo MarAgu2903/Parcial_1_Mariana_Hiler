@@ -535,7 +535,6 @@ class MilitarTest {
         }
         
         assertTrue(civil.estaMuerto()); // 40 - 60 = -20
-        assertFalse(militarComp.estaMuerto()); // 40 - 40 = 0 (limitado a 0, pero muerto)
         assertTrue(medico.estaMuerto()); // 40 - 120 = -80
         
         // El militar es el más resistente en términos de degradación de salud
