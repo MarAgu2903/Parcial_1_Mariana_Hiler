@@ -1,0 +1,86 @@
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 1
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Carga viral tras incremento natural: 520
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 58
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:1 B:1 O:1
+2026-02-20 10:59:17 [main] WARN  org.example.Model.Sistema.Priorizacion - Paciente 001 pasa a UCI
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:1 O:1
+2026-02-20 10:59:17 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:2 B:2 O:3
+2026-02-20 10:59:17 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 018 ha fallecido en el turno actual
+2026-02-20 10:59:17 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 030 ha fallecido en el turno actual
+2026-02-20 10:59:17 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 048 ha fallecido en el turno actual
+2026-02-20 10:59:17 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 054 ha fallecido en el turno actual
+2026-02-20 10:59:17 [main] WARN  org.example.Model.Sistema.Priorizacion - Focos infecciosos activos: 0. Carga viral actual: 520
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 1 
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - No hay más pacientes. Fin de la simulación.
+2026-02-20 10:59:17 [main] INFO  org.example.Model.Sistema.Priorizacion - Estado final recursos en Almacen -> A:2 B:2 O:3
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 1
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Carga viral tras incremento natural: 520
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 58
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:1 B:1 O:1
+2026-02-20 11:21:39 [main] WARN  org.example.Model.Sistema.Priorizacion - Paciente 001 pasa a UCI
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:1 O:1
+2026-02-20 11:21:39 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:3 B:3 O:3
+2026-02-20 11:21:39 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 018 ha fallecido en el turno actual
+2026-02-20 11:21:39 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 030 ha fallecido en el turno actual
+2026-02-20 11:21:39 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 048 ha fallecido en el turno actual
+2026-02-20 11:21:39 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 054 ha fallecido en el turno actual
+2026-02-20 11:21:39 [main] WARN  org.example.Model.Sistema.Priorizacion - Focos infecciosos activos: 0. Carga viral actual: 520
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 1 
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - No hay más pacientes. Fin de la simulación.
+2026-02-20 11:21:39 [main] INFO  org.example.Model.Sistema.Priorizacion - Estado final recursos en Almacen -> A:3 B:3 O:3
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 1
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Carga viral tras incremento natural: 520
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 58
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:1 B:1 O:1
+2026-02-20 11:22:56 [main] WARN  org.example.Model.Sistema.Priorizacion - Paciente 001 pasa a UCI
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:1 O:1
+2026-02-20 11:22:56 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:3 B:3 O:3
+2026-02-20 11:22:56 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 018 ha fallecido en el turno actual
+2026-02-20 11:22:56 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 030 ha fallecido en el turno actual
+2026-02-20 11:22:56 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 048 ha fallecido en el turno actual
+2026-02-20 11:22:56 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 054 ha fallecido en el turno actual
+2026-02-20 11:22:56 [main] WARN  org.example.Model.Sistema.Priorizacion - Focos infecciosos activos: 0. Carga viral actual: 520
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 1 
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - No hay más pacientes. Fin de la simulación.
+2026-02-20 11:22:56 [main] INFO  org.example.Model.Sistema.Priorizacion - Estado final recursos en Almacen -> A:3 B:3 O:3
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 1
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Carga viral tras incremento natural: 520
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 58
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:1 B:1 O:1
+2026-02-20 11:28:12 [main] WARN  org.example.Model.Sistema.Priorizacion - Paciente 001 pasa a UCI
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:1 B:1 O:1
+2026-02-20 11:28:12 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:3 B:3 O:3
+2026-02-20 11:28:12 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 018 ha fallecido en el turno actual
+2026-02-20 11:28:12 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 030 ha fallecido en el turno actual
+2026-02-20 11:28:12 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 048 ha fallecido en el turno actual
+2026-02-20 11:28:12 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 054 ha fallecido en el turno actual
+2026-02-20 11:28:12 [main] WARN  org.example.Model.Sistema.Priorizacion - Focos infecciosos activos: 0. Carga viral actual: 520
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 1 
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - No hay más pacientes. Fin de la simulación.
+2026-02-20 11:28:12 [main] INFO  org.example.Model.Sistema.Priorizacion - Estado final recursos en Almacen -> A:3 B:3 O:3
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Inicio Turno 1
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Carga viral tras incremento natural: 520
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en fila: 58
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Pacientes en UCI: 0
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos disponibles -> A:100 B:100 O:100
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Bonificación aplicada por recuperación. Carga viral actual: 420
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Paciente 001 fue sanado. Cantidad recursos utilizados: {A=2, B=1, O=1}
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Cantidad recursos restantes -> A:98 B:99 O:99
+2026-02-20 11:34:22 [main] DEBUG org.example.Model.Sistema.Priorizacion - Aplicando degradación de salud y aumento de infección
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Recursos luego de aumento -> A:100 B:101 O:101
+2026-02-20 11:34:22 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 018 ha fallecido en el turno actual
+2026-02-20 11:34:22 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 030 ha fallecido en el turno actual
+2026-02-20 11:34:22 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 048 ha fallecido en el turno actual
+2026-02-20 11:34:22 [main] ERROR org.example.Model.Sistema.Priorizacion - Paciente 054 ha fallecido en el turno actual
+2026-02-20 11:34:22 [main] WARN  org.example.Model.Sistema.Priorizacion - Focos infecciosos activos: 0. Carga viral actual: 420
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Fin Turno 1 
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - No hay más pacientes. Fin de la simulación.
+2026-02-20 11:34:22 [main] INFO  org.example.Model.Sistema.Priorizacion - Estado final recursos en Almacen -> A:100 B:101 O:101

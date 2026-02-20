@@ -13,6 +13,8 @@ public abstract class Paciente implements CicloMutacion {
     protected int nivelSalud;
     protected String genoma;
 
+    private boolean _ES_FOCO_INFECCIOSO = false;
+
     public Paciente (String Id, int nivelInfeccion, int nivelSalud, String genoma){
         try {
 
@@ -134,6 +136,10 @@ public abstract class Paciente implements CicloMutacion {
 
     public boolean estaMuerto() {
         return this.nivelSalud <= 0;
+    }
+
+    public boolean esFocoInfeccioso() {
+        return _ES_FOCO_INFECCIOSO && !estaMuerto();
     }
 
 

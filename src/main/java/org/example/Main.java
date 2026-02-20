@@ -1,10 +1,14 @@
 package org.example;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.Model.Almacen.Almacen;
 import org.example.Model.Pacientes.*;
+import org.example.Model.Reporte.ReporteFinal;
+import org.example.Model.Sistema.CargaViral;
 import org.example.Model.Sistema.Priorizacion;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -21,14 +25,37 @@ public class Main {
             Queue<Paciente> colaGeneral = new LinkedList<>();
             Queue<Paciente> colaUCI = new LinkedList<>();
 
+            CargaViral cargaViral = new CargaViral();
+
             // Inicializa el almacén con valores para el ejemplo
-            Almacen almacen = new Almacen(1, 1, 1);
+            Almacen almacen = new Almacen(100, 100, 100);
 
             cargarPacientesDesdeArchivo(colaGeneral);
 
-            Priorizacion sistema = new Priorizacion(colaGeneral, colaUCI, almacen);
+            Priorizacion sistema = new Priorizacion(colaGeneral, colaUCI, almacen, cargaViral);
 
             sistema.iniciarSimulacion();
+
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            ReporteFinal reporte = new ReporteFinal(
+                    sistema.obtenerSobrevivientesPorTipo(),
+                    sistema.getListaFallecidos(),
+                    sistema.getCargaViralFinal(),
+                    sistema.isSistemaColapsado()
+            );
+
+            try {
+                mapper.writerWithDefaultPrettyPrinter()
+                        .writeValue(new File("reporte_final.json"), reporte);
+
+                System.out.println("Reporte JSON generado correctamente.");
+
+            } catch (IOException e) {
+                System.out.println("Error al generar el archivo JSON.");
+                e.getLocalizedMessage();
+            }
         }
 
         private static void cargarPacientesDesdeArchivo(Queue<Paciente> cola) {

@@ -10,6 +10,14 @@ import java.util.Queue;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import org.example.Model.Sistema.CargaViral;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.HashMap;
+
+
 public class Priorizacion {
 
     private static final Logger logger = LogManager.getLogger(Priorizacion.class.getName());
@@ -18,14 +26,20 @@ public class Priorizacion {
         private Queue<Paciente> colaUCI;
         private Almacen almacen;
 
-        public Priorizacion(Queue<Paciente> colaPacientes,
-                            Queue<Paciente> colaUCI,
-                            Almacen almacen) {
+        private CargaViral cargaViral;
+        private List<String> listaFallecidos = new ArrayList<>();
+        private List<Paciente> listaSanados = new ArrayList<>();
 
-            this.colaPacientes = colaPacientes;
-            this.colaUCI = colaUCI;
-            this.almacen = almacen;
-        }
+    public Priorizacion(Queue<Paciente> colaPacientes,
+                        Queue<Paciente> colaUCI,
+                        Almacen almacen,
+                        CargaViral cargaViral) {
+
+        this.colaPacientes = colaPacientes;
+        this.colaUCI = colaUCI;
+        this.almacen = almacen;
+        this.cargaViral = cargaViral;
+    }
 
         public void agregarPaciente(Paciente paciente) {
             colaPacientes.offer(paciente);
@@ -38,6 +52,8 @@ public class Priorizacion {
             while (!colaPacientes.isEmpty() || !colaUCI.isEmpty()) {
 
                 logger.info("Inicio Turno {}", turno);
+                cargaViral.incrementarNatural();
+                logger.info("Carga viral tras incremento natural: {}", cargaViral.getCargaActual());
                 logger.info("Pacientes en fila: {}", colaPacientes.size());
                 logger.info("Pacientes en UCI: {}", colaUCI.size());
                 logger.info("Recursos disponibles -> A:{} B:{} O:{}",
@@ -111,12 +127,7 @@ public class Priorizacion {
                         //System.out.println("Paciente pasa a UCI");
                         logger.warn("Paciente {} pasa a UCI", pacienteFila.getId());
                     }
-                    degradarAumentar();
-                    registrarMuertes(colaPacientes);
-                    registrarMuertes(colaUCI);
-                    logger.info("Fin Turno {} ", turno);
-                    turno++;
-                    continue;
+
                 }
 
                 // Si alguien fue atendido
@@ -124,15 +135,33 @@ public class Priorizacion {
 
                     Map<String, Integer> receta = seleccionado.generarReceta();
                     almacen.consumirRecursos(receta);
+                    cargaViral.aplicarBonificacionRecuperacion();
+
+                    listaSanados.add(seleccionado);
+
+                    logger.info("Bonificación aplicada por recuperación. Carga viral actual: {}",
+                            cargaViral.getCargaActual());
                     logger.info("Paciente {} fue sanado. Cantidad recursos utilizados: {}",
                             seleccionado.getId(),
                             receta);
 
-                }
+                    }
 
                 degradarAumentar();
                 registrarMuertes(colaPacientes);
                 registrarMuertes(colaUCI);
+
+                int focos = contarFocosActivos();
+                cargaViral.aplicarPenalizacionMutacion(focos);
+
+                if (cargaViral.sistemaColapsado()) {
+                    logger.fatal("COLAPSO DEL SISTEMA - GAME OVER");
+                    break;
+                }
+
+                logger.warn("Focos infecciosos activos: {}. Carga viral actual: {}",
+                        focos,
+                        cargaViral.getCargaActual());
 
                 logger.info("Fin Turno {} ", turno);
                 turno++;
@@ -185,12 +214,52 @@ public class Priorizacion {
                 Paciente paciente = cola.poll();
 
                 if (paciente.estaMuerto()) {
-                    //System.out.println("Paciente falleció: " + paciente.getId());
                     logger.error("Paciente {} ha fallecido en el turno actual", paciente.getId());
-                } else {
-                    cola.offer(paciente);
+                    listaFallecidos.add(paciente.getId());
                 }
             }
         }
+
+    private int contarFocosActivos() {
+
+        int contador = 0;
+
+        for (Paciente p : colaPacientes) {
+            if (p.esFocoInfeccioso()) contador++;
+        }
+
+        for (Paciente p : colaUCI) {
+            if (p.esFocoInfeccioso()) contador++;
+        }
+
+        return contador;
+    }
+
+
+    //Para el manejo de Json
+    public Map<String, Integer> obtenerSobrevivientesPorTipo() {
+
+        Map<String, Integer> conteo = new HashMap<>();
+
+        for (Paciente p : listaSanados) {
+            conteo.merge(p.getClass().getSimpleName(), 1, Integer::sum);
+        }
+
+        return conteo;
+    }
+
+    public List<String> getListaFallecidos() {
+        return listaFallecidos;
+    }
+
+    public int getCargaViralFinal() {
+        return cargaViral.getCargaActual();
+    }
+
+    public boolean isSistemaColapsado() {
+        return cargaViral.sistemaColapsado();
+    }
+
+
 }
 

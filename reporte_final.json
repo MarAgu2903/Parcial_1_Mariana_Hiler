@@ -1,0 +1,8 @@
+{
+  "sobrevivientesPorTipo" : {
+    "Civil" : 1
+  },
+  "fallecidos" : [ "018", "030", "048", "054" ],
+  "cargaViralFinal" : 420,
+  "sistemaColapsado" : false
+}
